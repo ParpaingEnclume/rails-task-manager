@@ -1,0 +1,8 @@
+<h1> HELLO </h1>
+<%= link_to "Create a new task", newt_path %>
+<% @tasks.each do |task| %>
+<h2><%= task.title %></h2>
+<p><%= task.completed %></p>
+<%= link_to "Delete.", task_path(task), method: :delete, data:{confirm: "R u sure ?"} %>
+<%= link_to task.title, task_path(task) %>
+<% end %>
